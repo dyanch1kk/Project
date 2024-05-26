@@ -29,7 +29,7 @@ public class GameApplication extends Application {
     private int time1;
     private int score1;
     private Circle ball;
-    private int ballSize = 250;
+    private int ballSize = 150;
 
     @Override
     public void start(Stage Stage1) {
@@ -42,9 +42,8 @@ public class GameApplication extends Application {
         modeComboBox = new ComboBox<>();
         modeComboBox.getItems().addAll("Простой", "Средний", "Сложный");
         modeComboBox.setValue("Простой"); // по дефолту какой режим
-
         buttonstart.setOnAction(e -> startgame());
-
+        modeComboBox.setOnAction(e -> setMode(modeComboBox.getSelectionModel().getSelectedIndex()));
         top.setHgap(200); //горизонтальное расстояние между элементами
         top.getChildren().addAll(buttonstart, time, score);
         FlowPane bottomPanel = new FlowPane();
@@ -60,7 +59,19 @@ public class GameApplication extends Application {
 
         timerNachalo();
     }
-
+    private void setMode(int mode) {
+        switch (mode) {
+            case 0:
+                ballSize = 150;
+                break;
+            case 1:
+                ballSize = 50;
+                break;
+            case 2:
+                ballSize = 30;
+                break;
+        }
+    }
     public static void main(String[] args) {
         launch(args);
     }
@@ -114,3 +125,4 @@ public class GameApplication extends Application {
         gamePane.getChildren().add(ball);
     }
 }
+

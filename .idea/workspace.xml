@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a66383a7-6d7a-4a5a-b56b-00d175c900aa" name="Changes" comment="2. добавила кнопку старта, время, счет.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/project/GameApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/project/GameApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

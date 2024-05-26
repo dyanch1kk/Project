@@ -1,0 +1,62 @@
+Index: src/main/java/org/example/project/GameApplication.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.project;\r\n\r\nimport javafx.application.Application;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.layout.BorderPane; // помогает расположить элементы в нужным местах на окне(то же самое что pane, но с расширенным функционалом)\r\nimport javafx.stage.Stage;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.layout.FlowPane;\r\n\r\npublic class GameApplication extends Application {\r\n    private Button buttonstart; //кнопка старта\r\n    private Label time; //отображение времени с момента нажатия кнопки старта\r\n    private Label score; //отображение счета с момента нажатия кнопки старта\r\n    // счет будет считаться так:\r\n    // если нажали на шарик, +1 к счету\r\n    // если промахнулись, -1 к счету\r\n    @Override\r\n    public void start(Stage Stage1) {\r\n        Stage1.setTitle(\"Aim lab\");\r\n        buttonstart = new Button(\"Начало\");\r\n        time = new Label(\"Время: 0\");\r\n        score = new Label(\"Счет: 0\");\r\n        FlowPane top = new FlowPane();\r\n        top.setHgap(200); //горизонтальное расстояние между элементами\r\n        top.getChildren().addAll(buttonstart, time, score);\r\n        BorderPane pane = new BorderPane(); // панель\r\n        pane.setTop(top); // отступ\r\n        Scene scene = new Scene(pane, 800, 600);\r\n        Stage1.setScene(scene);\r\n        Stage1.show();\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        launch(args);\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/project/GameApplication.java b/src/main/java/org/example/project/GameApplication.java
+--- a/src/main/java/org/example/project/GameApplication.java	(revision 586fbdfcd5e80ba5a44ca9de4925a413c92997ff)
++++ b/src/main/java/org/example/project/GameApplication.java	(date 1716724562097)
+@@ -22,7 +22,7 @@
+         time = new Label("Время: 0");
+         score = new Label("Счет: 0");
+         FlowPane top = new FlowPane();
+-        top.setHgap(200); //горизонтальное расстояние между элементами
++        top.setHgap(200); // горизонтальное расстояние между элементами
+         top.getChildren().addAll(buttonstart, time, score);
+         BorderPane pane = new BorderPane(); // панель
+         pane.setTop(top); // отступ
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"a66383a7-6d7a-4a5a-b56b-00d175c900aa\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/org/example/project/GameApplication.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/org/example/project/GameApplication.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\"><![CDATA[{\r\n  \"lastFilter\": {\r\n    \"state\": \"OPEN\",\r\n    \"assignee\": \"dyanch1kk\"\r\n  }\r\n}]]></component>\r\n  <component name=\"GithubDefaultAccount\">\r\n    <option name=\"defaultAccountId\" value=\"4c16b8b9-ded1-43fb-8e47-4e2d1a4b7655\" />\r\n  </component>\r\n  <component name=\"GithubPullRequestsUISettings\"><![CDATA[{\r\n  \"selectedUrlAndAccountId\": {\r\n    \"url\": \"https://github.com/dyanch1kk/Project.git\",\r\n    \"accountId\": \"4c16b8b9-ded1-43fb-8e47-4e2d1a4b7655\"\r\n  }\r\n}]]></component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"WRAPPER\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 5\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2h09zHm4JkvZyn9Ybem24JokTq9\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.GameApplication.executor\": \"Run\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"settings.editor.selected.configurable\": \"vcs.Git\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"a66383a7-6d7a-4a5a-b56b-00d175c900aa\" name=\"Changes\" comment=\"\" />\r\n      <created>1716720392765</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1716720392765</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 586fbdfcd5e80ba5a44ca9de4925a413c92997ff)
++++ b/.idea/workspace.xml	(date 1716724464459)
+@@ -4,10 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="a66383a7-6d7a-4a5a-b56b-00d175c900aa" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/project/GameApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/project/GameApplication.java" afterDir="false" />
+-    </list>
++    <list default="true" id="a66383a7-6d7a-4a5a-b56b-00d175c900aa" name="Changes" comment="2. добавила кнопку старта, время, счет." />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -65,6 +62,19 @@
+       <option name="presentableId" value="Default" />
+       <updated>1716720392765</updated>
+     </task>
++    <task id="LOCAL-00001" summary="2. добавила кнопку старта, время, счет.">
++      <option name="closed" value="true" />
++      <created>1716724371898</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1716724371898</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="2. добавила кнопку старта, время, счет." />
++    <option name="LAST_COMMIT_MESSAGE" value="2. добавила кнопку старта, время, счет." />
++  </component>
+ </project>
+\ No newline at end of file

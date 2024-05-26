@@ -2,6 +2,7 @@ package org.example.project;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane; // помогает расположить элементы в нужных местах на окне(то же самое что pane, но с расширенным функционалом)
 import javafx.stage.Stage;
@@ -29,7 +30,7 @@ public class GameApplication extends Application {
     private int time1;
     private int score1;
     private Circle ball;
-    private int ballSize = 150;
+    private int ballSize = 100;
 
     @Override
     public void start(Stage Stage1) {
@@ -56,13 +57,19 @@ public class GameApplication extends Application {
         Scene scene = new Scene(pane, 800, 600);
         Stage1.setScene(scene);
         Stage1.show();
-
         timerNachalo();
+        gamePane.addEventHandler(MouseEvent.MOUSE_CLICKED, e -> {
+            if (ball != null && !ball.contains(e.getX(), e.getY())) {
+                score1--;
+                score.setText("Счет: " + score1);
+                moveBall();
+            }
+        });
     }
     private void setMode(int mode) {
         switch (mode) {
             case 0:
-                ballSize = 150;
+                ballSize = 100;
                 break;
             case 1:
                 ballSize = 50;
@@ -112,14 +119,16 @@ public class GameApplication extends Application {
             score1++;
             score.setText("Счет: " + score1);
             moveBall(); // перемещаем шар при клике на него
+            e.consume(); //
         });
 
-        gamePane.setOnMouseClicked(e -> {
+
+     /*   gamePane.setOnMouseClicked(e -> {
             if (e.getTarget() != ball) {
                 score1--;
                 score.setText("Счет: " + score1);
             }
-        });
+        });*/
 
 
         gamePane.getChildren().add(ball);
